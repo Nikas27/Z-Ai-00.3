@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Ai</title>
+    
+    <!-- Tailwind CSS JIT CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                animation: {
+                    'soft-glow': 'soft-glow 2.5s ease-in-out forwards',
+                    'bell-shake': 'bell-shake 1s cubic-bezier(.36,.07,.19,.97) both infinite',
+                    'scroll-y': 'scroll-y 60s linear infinite',
+                    'morph': 'morph 8s ease-in-out infinite',
+                },
+                keyframes: {
+                    'soft-glow': {
+                        '0%': { backgroundColor: 'transparent' },
+                        '50%': { backgroundColor: 'rgba(56, 189, 248, 0.15)' },
+                        '100%': { backgroundColor: 'transparent' },
+                    },
+                    'bell-shake': {
+                        '0%': { transform: 'rotate(0)' },
+                        '15%': { transform: 'rotate(5deg)' },
+                        '30%': { transform: 'rotate(-5deg)' },
+                        '45%': { transform: 'rotate(4deg)' },
+                        '60%': { transform: 'rotate(-4deg)' },
+                        '75%': { transform: 'rotate(2deg)' },
+                        '85%': { transform: 'rotate(-2deg)' },
+                        '92%': { transform: 'rotate(1deg)' },
+                        '100%': { transform: 'rotate(0)' },
+                    },
+                    'scroll-y': {
+                        '0%': { transform: 'translateY(0)' },
+                        '100%': { transform: 'translateY(-50%)' },
+                    },
+                    'morph': {
+                        '0%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                        '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                        '100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                    }
+                }
+            }
+        }
+      }
+    </script>
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1"
+  }
+}
+</script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
